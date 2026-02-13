@@ -69,7 +69,7 @@
             <!-- Left: Form -->
             <div class="form-wrapper animate-item">
                 <h2 class="form-title">문의 작성</h2>
-                <form action="https://formsubmit.co/jiji8012@naver.com" method="POST" class="contact-form">
+                <form id="contactForm" class="contact-form">
 
                     <div class="form-group">
                         <label for="orgName">기관명 *</label>
@@ -128,11 +128,6 @@
                         <input type="checkbox" id="privacy" required>
                         <label for="privacy">개인정보 수집 및 이용에 동의합니다.</label>
                     </div>
-
-                    <!-- FormSubmit 설정 -->
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="새로운 강의 문의가 도착했습니다!">
-                    <input type="hidden" name="_template" value="table">
 
                     <button type="submit" class="btn btn-primary submit-btn">문의하기</button>
                 </form>
@@ -219,8 +214,58 @@
 
     <script src="assets/js/script.js"></script>
     <script>
-        // FormSubmit을 사용하므로 별도의 JavaScript 불필요
-        // 폼 제출 시 자동으로 jiji8012@naver.com으로 이메일 전송
+        // 폼 제출 시 이메일 클라이언트 열기
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // 폼 데이터 수집
+            const data = {
+                기관명: document.getElementById('orgName').value,
+                담당자명: document.getElementById('picName').value,
+                연락처: document.getElementById('phone').value,
+                이메일: document.getElementById('email').value,
+                희망교육과정: document.getElementById('course').value,
+                교육대상: document.getElementById('target').value,
+                인원: document.getElementById('people').value,
+                희망일정: document.getElementById('date').value || '미정',
+                문의내용: document.getElementById('message').value
+            };
+
+            // 이메일 제목과 본문 작성
+            const subject = `[강의 문의] ${data.기관명}`;
+            const body = `안녕하세요,
+
+${data.담당자명}입니다.
+
+━━━━━━━━━━━━━━━━━━━━━━
+📋 기관 정보
+━━━━━━━━━━━━━━━━━━━━━━
+• 기관명: ${data.기관명}
+• 담당자명: ${data.담당자명}
+• 연락처: ${data.연락처}
+• 이메일: ${data.이메일}
+
+━━━━━━━━━━━━━━━━━━━━━━
+📚 희망 교육 내용
+━━━━━━━━━━━━━━━━━━━━━━
+• 교육 과정: ${data.희망교육과정}
+• 교육 대상: ${data.교육대상}
+• 인원: ${data.인원}
+• 희망 일정: ${data.희망일정}
+
+━━━━━━━━━━━━━━━━━━━━━━
+💬 문의 내용
+━━━━━━━━━━━━━━━━━━━━━━
+${data.문의내용}
+
+━━━━━━━━━━━━━━━━━━━━━━
+
+감사합니다.`;
+
+            // mailto 링크로 이메일 클라이언트 열기
+            window.location.href = `mailto:jiji8012@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        });
     </script>
 </body>
 
