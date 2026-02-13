@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 문의 | 김지연 AI 교육 전문가</title>
+    <meta name="description" content="김지연 강사의 AI 교육 의뢰 및 문의. 맞춤형 커리큘럼 제안 및 친절한 상담.">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Kim Ji-yeon<span class="text-secondary">.AI</span></a>
+            <div class="mobile-menu-btn">☰</div>
+            <nav class="nav-menu">
+                <a href="index.html" class="nav-link">홈</a>
+                <a href="about.html" class="nav-link">강사 소개</a>
+                <a href="programs.html" class="nav-link">강의 프로그램</a>
+                <a href="cases.html" class="nav-link">강의 사례/후기</a>
+                <a href="resources.html" class="nav-link">AI 리소스</a>
+                <a href="contact.html" class="nav-link active btn btn-primary"
+                    style="color: white; padding: 0.5rem 1.2rem;">강의 문의하기</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header section bg-gray" style="padding-top: 120px;">
+        <div class="container text-center animate-item">
+            <h1 class="section-title">강의 문의</h1>
+            <p class="section-subtitle">우리 기관에 꼭 맞는 AI 교육,<br>지금 바로 맞춤형 제안을 받아보세요.</p>
+        </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="contact-info section bg-white" style="padding-bottom: 0;">
+        <div class="container">
+            <div class="contact-grid animate-item">
+                <div class="contact-card">
+                    <div class="contact-icon">📞</div>
+                    <h3>전화 상담</h3>
+                    <p class="contact-text">010-5407-9275</p>
+                    <p class="contact-sub">평일 09:00 - 18:00</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">💬</div>
+                    <h3>카카오톡 상담</h3>
+                    <p class="contact-text">ID: jygogo</p>
+                    <p class="contact-sub">실시간 빠른 답변</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">✉️</div>
+                    <h3>이메일 문의</h3>
+                    <p class="contact-text">jiji8012@naver.com</p>
+                    <p class="contact-sub">24시간 접수 가능</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inquiry Form & Process -->
+    <section class="inquiry section bg-white">
+        <div class="container inquiry-container">
+
+            <!-- Left: Form -->
+            <div class="form-wrapper animate-item">
+                <h2 class="form-title">문의 작성</h2>
+                <form id="contactForm" class="contact-form">
+
+                    <div class="form-group">
+                        <label for="orgName">기관명 *</label>
+                        <input type="text" id="orgName" required placeholder="기관 또는 회사명">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="picName">담당자명 *</label>
+                            <input type="text" id="picName" required placeholder="성함">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">연락처 *</label>
+                            <input type="tel" id="phone" required placeholder="010-1234-5678">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">이메일 *</label>
+                        <input type="email" id="email" required placeholder="example@company.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="course">희망 교육 과정 *</label>
+                        <select id="course" required>
+                            <option value="">선택해주세요</option>
+                            <option value="AI기본법 대응 직무연수">AI기본법 대응 직무연수</option>
+                            <option value="공공기관 직무역량 강화">공공기관 직무역량 강화</option>
+                            <option value="CEO·임원 AI 전략">CEO·임원 AI 전략</option>
+                            <option value="청년 취업 캠프">청년 취업 캠프</option>
+                            <option value="맞춤형 과정 설계">맞춤형 과정 설계</option>
+                            <option value="기타">기타</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>교육 대상 및 인원 *</label>
+                        <div class="form-row">
+                            <input type="text" id="target" placeholder="예: 신입사원, 임원" required>
+                            <input type="text" id="people" placeholder="예: 30명" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="date">희망 일정</label>
+                        <input type="text" id="date" placeholder="예: 2026년 3월 중순">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">문의 내용 및 기대효과 *</label>
+                        <textarea id="message" rows="5" required placeholder="교육 목적, 특별 요청사항 등을 자유롭게 적어주세요."></textarea>
+                    </div>
+
+                    <div class="form-check">
+                        <input type="checkbox" id="privacy" required>
+                        <label for="privacy">개인정보 수집 및 이용에 동의합니다.</label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary submit-btn">문의하기</button>
+                </form>
+            </div>
+
+            <!-- Right: Process -->
+            <div class="process-wrapper animate-item">
+                <div class="process-box">
+                    <h3 class="mb-4">진행 프로세스</h3>
+                    <ul class="process-list">
+                        <li>
+                            <div class="proc-num">1</div>
+                            <div class="proc-text">
+                                <strong>문의 접수</strong>
+                                <p>폼 작성 또는 전화 문의</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="proc-num">2</div>
+                            <div class="proc-text">
+                                <strong>상담 및 분석</strong>
+                                <p>교육 목표 및 니즈 파악 (1-2일)</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="proc-num">3</div>
+                            <div class="proc-text">
+                                <strong>제안서 발송</strong>
+                                <p>맞춤형 커리큘럼 및 견적 제안</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="proc-num">4</div>
+                            <div class="proc-text">
+                                <strong>강의 진행</strong>
+                                <p>실무 중심의 교육 진행</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="proc-num">5</div>
+                            <div class="proc-text">
+                                <strong>사후 관리</strong>
+                                <p>강의 자료 공유 및 피드백</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h2>Kim Ji-yeon.AI</h2>
+                    <p>한국AI직무협회 대표<br>ISO 인공지능 수석강사 김지연</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Menu</h3>
+                    <ul>
+                        <li><a href="about.html">강사 소개</a></li>
+                        <li><a href="programs.html">강의 프로그램</a></li>
+                        <li><a href="cases.html">강의 사례</a></li>
+                        <li><a href="contact.html">문의하기</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li>📞 010-5407-9275</li>
+                        <li>💬 카카오톡: jygogo</li>
+                        <li>✉️ jiji8012@naver.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Kim Ji-yeon. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script>
+        // 폼 제출 시 이메일 클라이언트 열기
+        const form = document.getElementById('contactForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // 폼 데이터 수집
+            const orgName = document.getElementById('orgName').value;
+            const picName = document.getElementById('picName').value;
+            const phone = document.getElementById('phone').value;
+            const email = document.getElementById('email').value;
+            const course = document.getElementById('course').value;
+            const target = document.getElementById('target').value;
+            const people = document.getElementById('people').value;
+            const date = document.getElementById('date').value || '미정';
+            const message = document.getElementById('message').value;
+
+            // 이메일 제목과 본문 작성
+            const subject = `강의 문의 - ${orgName}`;
+            const body = `안녕하세요, ${picName}입니다.
+
+[기관 정보]
+• 기관명: ${orgName}
+• 담당자명: ${picName}
+• 연락처: ${phone}
+• 이메일: ${email}
+
+[희망 교육 과정]
+• 교육 과정: ${course}
+• 교육 대상: ${target}
+• 인원: ${people}
+• 희망 일정: ${date}
+
+[문의 내용]
+${message}
+
+감사합니다.`;
+
+            // mailto 링크로 이메일 클라이언트 열기
+            window.location.href = `mailto:jiji8012@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // 안내 메시지
+            alert('이메일 프로그램이 열립니다.\\n내용을 확인하시고 전송 버튼을 눌러주세요.');
+        });
+    </script>
+</body>
+
+</html>
