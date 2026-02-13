@@ -69,32 +69,32 @@
             <!-- Left: Form -->
             <div class="form-wrapper animate-item">
                 <h2 class="form-title">문의 작성</h2>
-                <form id="contactForm" class="contact-form">
+                <form action="https://formsubmit.co/jiji8012@naver.com" method="POST" class="contact-form">
 
                     <div class="form-group">
                         <label for="orgName">기관명 *</label>
-                        <input type="text" id="orgName" required placeholder="기관 또는 회사명">
+                        <input type="text" id="orgName" name="기관명" required placeholder="기관 또는 회사명">
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
                             <label for="picName">담당자명 *</label>
-                            <input type="text" id="picName" required placeholder="성함">
+                            <input type="text" id="picName" name="담당자명" required placeholder="성함">
                         </div>
                         <div class="form-group">
                             <label for="phone">연락처 *</label>
-                            <input type="tel" id="phone" required placeholder="010-1234-5678">
+                            <input type="tel" id="phone" name="연락처" required placeholder="010-1234-5678">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="email">이메일 *</label>
-                        <input type="email" id="email" required placeholder="example@company.com">
+                        <input type="email" id="email" name="이메일" required placeholder="example@company.com">
                     </div>
 
                     <div class="form-group">
                         <label for="course">희망 교육 과정 *</label>
-                        <select id="course" required>
+                        <select id="course" name="희망교육과정" required>
                             <option value="">선택해주세요</option>
                             <option value="AI기본법 대응 직무연수">AI기본법 대응 직무연수</option>
                             <option value="공공기관 직무역량 강화">공공기관 직무역량 강화</option>
@@ -108,25 +108,31 @@
                     <div class="form-group">
                         <label>교육 대상 및 인원 *</label>
                         <div class="form-row">
-                            <input type="text" id="target" placeholder="예: 신입사원, 임원" required>
-                            <input type="text" id="people" placeholder="예: 30명" required>
+                            <input type="text" id="target" name="교육대상" placeholder="예: 신입사원, 임원" required>
+                            <input type="text" id="people" name="인원" placeholder="예: 30명" required>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="date">희망 일정</label>
-                        <input type="text" id="date" placeholder="예: 2026년 3월 중순">
+                        <input type="text" id="date" name="희망일정" placeholder="예: 2026년 3월 중순">
                     </div>
 
                     <div class="form-group">
                         <label for="message">문의 내용 및 기대효과 *</label>
-                        <textarea id="message" rows="5" required placeholder="교육 목적, 특별 요청사항 등을 자유롭게 적어주세요."></textarea>
+                        <textarea id="message" name="문의내용" rows="5" required
+                            placeholder="교육 목적, 특별 요청사항 등을 자유롭게 적어주세요."></textarea>
                     </div>
 
                     <div class="form-check">
                         <input type="checkbox" id="privacy" required>
                         <label for="privacy">개인정보 수집 및 이용에 동의합니다.</label>
                     </div>
+
+                    <!-- FormSubmit 설정 -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="새로운 강의 문의가 도착했습니다!">
+                    <input type="hidden" name="_template" value="table">
 
                     <button type="submit" class="btn btn-primary submit-btn">문의하기</button>
                 </form>
@@ -213,49 +219,8 @@
 
     <script src="assets/js/script.js"></script>
     <script>
-        // 폼 제출 시 이메일 클라이언트 열기
-        const form = document.getElementById('contactForm');
-        form.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // 폼 데이터 수집
-            const orgName = document.getElementById('orgName').value;
-            const picName = document.getElementById('picName').value;
-            const phone = document.getElementById('phone').value;
-            const email = document.getElementById('email').value;
-            const course = document.getElementById('course').value;
-            const target = document.getElementById('target').value;
-            const people = document.getElementById('people').value;
-            const date = document.getElementById('date').value || '미정';
-            const message = document.getElementById('message').value;
-
-            // 이메일 제목과 본문 작성
-            const subject = `강의 문의 - ${orgName}`;
-            const body = `안녕하세요, ${picName}입니다.
-
-[기관 정보]
-• 기관명: ${orgName}
-• 담당자명: ${picName}
-• 연락처: ${phone}
-• 이메일: ${email}
-
-[희망 교육 과정]
-• 교육 과정: ${course}
-• 교육 대상: ${target}
-• 인원: ${people}
-• 희망 일정: ${date}
-
-[문의 내용]
-${message}
-
-감사합니다.`;
-
-            // mailto 링크로 이메일 클라이언트 열기
-            window.location.href = `mailto:jiji8012@naver.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
-            // 안내 메시지
-            alert('이메일 프로그램이 열립니다.\\n내용을 확인하시고 전송 버튼을 눌러주세요.');
-        });
+        // FormSubmit을 사용하므로 별도의 JavaScript 불필요
+        // 폼 제출 시 자동으로 jiji8012@naver.com으로 이메일 전송
     </script>
 </body>
 
